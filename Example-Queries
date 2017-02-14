@@ -1,0 +1,24 @@
+Example queries for [Google BigQuery](https://console.cloud.google.com/iam-admin/iam/project?project=bigquery-158617)
+
+SELECT Passenger_count, Pickup_longitude, Pickup_latitude
+FROM [TaxiTrips.example_table]
+
+SELECT *
+FROM [TaxiTrips.example_table]
+
+SELECT Passenger_count, Pickup_longitude, Pickup_latitude
+FROM [TaxiTrips.example_table]
+WHERE Pickup_longitude > -74 AND Pickup_latitude < 40.75
+
+SELECT Passenger_count, COUNT(*) AS number_of_trip, AVG(Total_amount) AS average_fare
+FROM [TaxiTrips.example_table]
+GROUP BY Passenger_count
+
+SELECT Pickup_longitude AS lon, Pickup_latitude AS lat
+FROM [TaxiTrips.example_table]
+
+SELECT Passenger_count, AVG(Total_amount) as avg_fare, COUNT(*) as trips
+FROM [TaxiTrips.example_table]
+GROUP BY Passenger_count
+
+
