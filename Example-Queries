@@ -1,4 +1,4 @@
-Example queries for [Google BigQuery](https://console.cloud.google.com/iam-admin/iam/project?project=bigquery-158617)
+Example queries for Google BigQuery: https://console.cloud.google.com/iam-admin/iam/project?project=bigquery-158617
 
 SELECT Passenger_count, Pickup_longitude, Pickup_latitude
 FROM [TaxiTrips.example_table]
