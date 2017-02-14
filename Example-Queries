@@ -22,3 +22,7 @@ FROM [TaxiTrips.example_table]
 GROUP BY Passenger_count
 
 
+
+SELECT ROUND(pickup_latitude, 4) as lat, ROUND(pickup_longitude, 4) as lon, COUNT(*) as num_pickups
+FROM [TaxiTrips.yellow_taxi_jun]
+GROUP BY lat, lon
