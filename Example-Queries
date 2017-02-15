@@ -26,3 +26,14 @@ GROUP BY Passenger_count
 SELECT ROUND(pickup_latitude, 4) as lat, ROUND(pickup_longitude, 4) as lon, COUNT(*) as num_pickups
 FROM [TaxiTrips.yellow_taxi_jun]
 GROUP BY lat, lon
+
+
+
+
+SELECT *
+FROM [TaxiTrips.example_table_copy]
+LEFT JOIN [TaxiTrips.surcharge]
+ON TaxiTrips.example_table_copy.Passenger_count = TaxiTrips.surcharge.Passenger_count
+WHERE TaxiTrips.example_table_copy.Pickup_longitude < 75 AND TaxiTrips.surcharge.surcharge > 2
+
+
