@@ -43,10 +43,12 @@ Some Census tracts may have very small or 0 population. It's up to you how to de
 
 - **Option 2:** For the second assignment option, you will need to add two additional pieces to your query (see below). It must be restricted to include only taxi trips going to JFK Airport and it must return information about the trip duration.
 
-*SELECT ROUND(Pickup_latitude, 3) AS lat, ROUND(Pickup_longitude, 3) AS lon, COUNT(*) AS num_trips,
-*SUM(TIMESTAMP_TO_SEC(TIMESTAMP(tpep_dropoff_datetime)) - TIMESTAMP_TO_SEC(TIMESTAMP(tpep_pickup_datetime))) AS total_duration_in_seconds
-*FROM [TaxiTrips.yellow_taxi_jun]
-*WHERE Dropoff_longitude > -73.823 AND Dropoff_longitude < -73.749 AND Dropoff_latitude > 40.618 AND Dropoff_latitude < 40.667
-*GROUP BY lat, lon
+SELECT ROUND(Pickup_latitude, 3) AS lat, ROUND(Pickup_longitude, 3) AS lon, COUNT(*) AS num_trips, SUM(TIMESTAMP_TO_SEC(TIMESTAMP(tpep_dropoff_datetime)) - TIMESTAMP_TO_SEC(TIMESTAMP(tpep_pickup_datetime))) AS total_duration_in_seconds
+
+FROM [TaxiTrips.yellow_taxi_jun]
+
+WHERE Dropoff_longitude > -73.823 AND Dropoff_longitude < -73.749 AND Dropoff_latitude > 40.618 AND Dropoff_latitude < 40.667
+
+GROUP BY lat, lon
 
 Using a spatial join, you can sum up the total trip time (total_duration_in_seconds) and the number of trips (num_trips) for each Census tract. Dividing one by the other will give the average time it takes to drive from each Census tract to JFK Airport.
