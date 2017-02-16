@@ -21,12 +21,12 @@ This assignment is not required. You may turn it in by email (galkamaxd at gmail
 
 **Due:** by the end of class next week, 22-Feb
 
-##### Task:
+### Task:
 
 - **Option 1**: How does the usage of NYC Taxis look when you adjust for population differences?  Using population data from the U.S. Census, color each census tract according to the number of taxi pickups normalized by population.
 - **Option 2**: How long does it take to get to JFK Airport from different parts of New York? For each Census tract, aggregate all the taxi trips that went to JFK Airport and color the map according to the average trip duration.
 
-##### Deliverable: A choropleth map, similar to the one we made in class.
+### Deliverable: A choropleth map, similar to the one we made in class.
 
 - **Option 1:** For this assignment, you will need to create a "GeoID" (county code + tract code) to join the census data to the shapefile. The shapefile posted here does not give the county code, but it does give the NYC borough, which is equivalent. You can convert between boroughs and counties using this table.
 
