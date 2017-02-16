@@ -1,6 +1,6 @@
 # MUSA-620-Week-5
 
-Intro to Databases / NYC Taxi data with Google BigQuery
+Intro to Databases / NYC Taxi data with Google BigQuery ([notes](https://github.com/MUSA-620-Fall-2017/MUSA-620-Week-5/blob/master/week-5-big-datasets.pptx))
 
 
 https://bigquery.cloud.google.com/welcome/bigquery-158617?pli=1
@@ -35,6 +35,7 @@ This assignment is not required. You may turn it in by email (galkamaxd at gmail
 |Manhattan	|1	|New York County	|61|
 |Queens|	4|	Queens County	|81|
 |Staten Island|	5	|Richmond County	|85|
+
 
 - **Option 2:** For the second assignment option, you will need to add two additional pieces to your query (see below). It must be restricted to include only taxi trips going to JFK Airport and it must return information about the trip duration.
 
