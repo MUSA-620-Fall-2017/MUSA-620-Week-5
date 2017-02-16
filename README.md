@@ -2,31 +2,33 @@
 
 Intro to Databases / NYC Taxi data with Google BigQuery ([notes](https://github.com/MUSA-620-Fall-2017/MUSA-620-Week-5/blob/master/week-5-big-datasets.pptx))
 
+![Distribution of NYC Taxi Pickups](https://blueshift.io/nyctaxipickups.png "Distribution of NYC Taxi Pickups")
 
-https://bigquery.cloud.google.com/welcome/bigquery-158617?pli=1
+##### Links from class:
+- [The BigQuery project we used in class](https://bigquery.cloud.google.com/welcome/bigquery-158617?pli=1)
+- [Google Cloud storage for the project](https://console.cloud.google.com/storage/browser?project=bigquery-158617)
+- [BigQuery SQL reference](https://cloud.google.com/bigquery/docs/reference/legacy-sql)
+- [NYC Taxi trip data](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)
 
-http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml
+##### Some interesting projects based this data:
+- [Passenger Privacy in the NYC Taxicab Dataset](https://research.neustar.biz/2014/09/15/riding-with-the-stars-passenger-privacy-in-the-nyc-taxicab-dataset/)
+- [A Day in the Life of an NYC Taxi Driver](http://chriswhong.github.io/nyctaxi/)
+- [Analyzing 1.1 Billion NYC Taxi and Uber Trips, with a Vengeance](http://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/)
 
-https://console.cloud.google.com/storage/browser?project=bigquery-158617
-
-https://console.cloud.google.com/iam-admin/iam/project?project=bigquery-158617
-
-# Assignment
+## Assignment
 
 This assignment is not required. You may turn it in by email (galkamaxd at gmail) or in person at class.
 
-**Due:** by the end of class next week, 22-Feb
+##### Due:** by the end of class next week, 22-Feb
 
-**Task:**
+##### Task:
 
-- Option 1: Using population data from the U.S. Census, color each census tract according to the number of taxi pickups normalized by population.
-- Option 2: Color each NYC Census tract according to the average time it takes to get to JFK Airport by taxi.
+- Option 1: How does the usage of NYC Taxis look when you adjust for population differences?  Using population data from the U.S. Census, color each census tract according to the number of taxi pickups normalized by population.
+- Option 2: How long does it take to get to JFK Airport? For each Census tract, aggregate all the taxi trips that went to JFK Airport and color the map according to the average trip duration.
 
-![Distribution of NYC Taxi Pickups](https://blueshift.io/nyctaxipickups.png "Distribution of NYC Taxi Pickups")
+##### Deliverable: A choropleth map, similar to the one we made in class.
 
-**Deliverable:** A choropleth map, similar to the one we made in class.
-
-- **Option 1:** For this assignment, you will need to create a "GeoID" (countyID + tractID) to join the census data to the shapefile. The shapefile posted here does not give the county code, but it does give the NYC borough, which is equivalent. You can convert between boroughs and counties using this table.
+- **Option 1:** For this assignment, you will need to create a "GeoID" (county code + tract code) to join the census data to the shapefile. The shapefile posted here does not give the county code, but it does give the NYC borough, which is equivalent. You can convert between boroughs and counties using this table.
 
 | Borough	| Borough Code | County | County Code |
 |-----|------|-------|-------|
@@ -35,6 +37,8 @@ This assignment is not required. You may turn it in by email (galkamaxd at gmail
 |Manhattan	|1	|New York County	|61|
 |Queens|	4|	Queens County	|81|
 |Staten Island|	5	|Richmond County	|85|
+
+Some Census tracts may have very small or 0 population. It's up to you how to deal with those cases, but normally 
 
 
 - **Option 2:** For the second assignment option, you will need to add two additional pieces to your query (see below). It must be restricted to include only taxi trips going to JFK Airport and it must return information about the trip duration.
@@ -45,4 +49,4 @@ This assignment is not required. You may turn it in by email (galkamaxd at gmail
 *WHERE Dropoff_longitude > -73.823 AND Dropoff_longitude < -73.749 AND Dropoff_latitude > 40.618 AND Dropoff_latitude < 40.667
 *GROUP BY lat, lon
 
-
+Using a spatial join, you can sum up the total trip time (total_duration_in_seconds) and the number of trips (num_trips) for each Census tract. Dividing one by the other will give the average time it takes to drive from each Census tract to JFK Airport.
