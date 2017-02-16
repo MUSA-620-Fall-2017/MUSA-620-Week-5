@@ -19,12 +19,12 @@ Intro to Databases / NYC Taxi data with Google BigQuery ([notes](https://github.
 
 This assignment is not required. You may turn it in by email (galkamaxd at gmail) or in person at class.
 
-##### Due:** by the end of class next week, 22-Feb
+**Due:** by the end of class next week, 22-Feb
 
 ##### Task:
 
-- Option 1: How does the usage of NYC Taxis look when you adjust for population differences?  Using population data from the U.S. Census, color each census tract according to the number of taxi pickups normalized by population.
-- Option 2: How long does it take to get to JFK Airport? For each Census tract, aggregate all the taxi trips that went to JFK Airport and color the map according to the average trip duration.
+- **Option 1**: How does the usage of NYC Taxis look when you adjust for population differences?  Using population data from the U.S. Census, color each census tract according to the number of taxi pickups normalized by population.
+- **Option 2**: How long does it take to get to JFK Airport from different parts of New York? For each Census tract, aggregate all the taxi trips that went to JFK Airport and color the map according to the average trip duration.
 
 ##### Deliverable: A choropleth map, similar to the one we made in class.
 
@@ -38,7 +38,7 @@ This assignment is not required. You may turn it in by email (galkamaxd at gmail
 |Queens|	4|	Queens County	|81|
 |Staten Island|	5	|Richmond County	|85|
 
-Some Census tracts may have very small or 0 population. It's up to you how to deal with those cases, but normally 
+Some Census tracts may have very small or 0 population. It's up to you how to deal with those cases (e.g. leave them in, throw them out, identify them separately on the map), whatever you feel is most relevant given the purpose.
 
 
 - **Option 2:** For the second assignment option, you will need to add two additional pieces to your query (see below). It must be restricted to include only taxi trips going to JFK Airport and it must return information about the trip duration.
