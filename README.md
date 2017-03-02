@@ -3,6 +3,7 @@
 Intro to Databases / NYC Taxi data with Google BigQuery ([notes](https://github.com/MUSA-620-Fall-2017/MUSA-620-Week-5/blob/master/week-5-big-datasets.pptx))
 
 ![Distribution of NYC Taxi Pickups](https://blueshift.io/nyctaxipickups.png "Distribution of NYC Taxi Pickups")
+The spatial distribution of taxi pickups in New York City
 
 ##### Links from class:
 - [The BigQuery project we used in class](https://bigquery.cloud.google.com/welcome/bigquery-158617?pli=1)
